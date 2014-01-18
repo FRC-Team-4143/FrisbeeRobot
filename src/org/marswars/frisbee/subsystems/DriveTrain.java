@@ -8,7 +8,7 @@ import org.marswars.frisbee.commands.ControlDrive;
 
 public class DriveTrain extends Subsystem {
 
-    private RobotDrive drive = new RobotDrive(RobotMap.LeftMotor, RobotMap.RightMotor);
+    private RobotDrive drive = new RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
 
     public void initDefaultCommand() {
         setDefaultCommand(new ControlDrive());

@@ -8,9 +8,14 @@ package org.marswars.frisbee;
  */
 public class RobotMap {
     
-    public static final int LeftMotor = 2;
-    public static final int RightMotor = 1;
-    
+    public static final int leftMotor = 2;
+    public static final int rightMotor = 1;
+    public static final int pressureSwitchChannel = 8;
+    public static final int compressorRelayChannel = 1;
+    public static final int solenoid1Extend = 4;
+    public static final int solenoid1Retract = 3;
+    public static final int solenoid2Extend = 11;
+    public static final int solenoid2Retract = 6;
     public static final int xboxControllerPort = 1;
     
 }
