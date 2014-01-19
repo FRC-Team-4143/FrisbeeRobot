@@ -5,13 +5,15 @@
  */
 package org.marswars.frisbee.commands;
 
+import edu.wpi.first.wpilibj.Timer;
+
 /**
  *
  * @author GrayKS
  */
-public class Solenoid2Extend extends CommandBase {
+public class SolenoidsTest extends CommandBase {
 
-    public Solenoid2Extend() {
+    public SolenoidsTest() {
         requires(pneumatics);
     }
 
@@ -21,7 +23,19 @@ public class Solenoid2Extend extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        pneumatics.solenoid1Extend();
+        Timer.delay(1);
         pneumatics.solenoid2Extend();
+        Timer.delay(1);
+        pneumatics.solenoid1Retract();
+        Timer.delay(1);
+        pneumatics.solenoid2Retract();
+        Timer.delay(1);
+        pneumatics.solenoidsExtend();
+        Timer.delay(1);
+        pneumatics.solenoidsRetract();
+        Timer.delay(1);
+        pneumatics.solenoidsStop();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -36,6 +50,6 @@ public class Solenoid2Extend extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        pneumatics.solenoidStop();
+        pneumatics.solenoidsStop();
     }
 }

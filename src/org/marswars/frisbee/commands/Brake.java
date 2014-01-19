@@ -9,10 +9,10 @@ package org.marswars.frisbee.commands;
  *
  * @author GrayKS
  */
-public class Solenoid1Retract extends CommandBase {
-
-    public Solenoid1Retract() {
-        requires(pneumatics);
+public class Brake extends CommandBase {
+    
+    public Brake() {
+      requires(driveTrain);
     }
 
     // Called just before this Command runs the first time
@@ -21,7 +21,7 @@ public class Solenoid1Retract extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        pneumatics.solenoid1Retract();
+        driveTrain.arcadeDrive(0, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -36,6 +36,5 @@ public class Solenoid1Retract extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        pneumatics.solenoidStop();
     }
 }

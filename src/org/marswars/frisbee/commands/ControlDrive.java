@@ -15,7 +15,7 @@ public class ControlDrive extends CommandBase {
     protected void execute() {
         SmartDashboard.putNumber("Y stick", oi.xbox.getY(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("X stick", oi.xbox.getX(GenericHID.Hand.kLeft));
-        driveTrain.arcadeDrive(-1 * oi.xbox.getY(GenericHID.Hand.kLeft),-1 * oi.xbox.getX(GenericHID.Hand.kLeft), true);
+        driveTrain.arcadeDrive(-1 * oi.xbox.getY(GenericHID.Hand.kLeft), -1 * oi.xbox.getX(GenericHID.Hand.kLeft));
     }
 
     protected boolean isFinished() {

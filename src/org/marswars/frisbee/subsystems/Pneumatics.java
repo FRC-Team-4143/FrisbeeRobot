@@ -18,9 +18,9 @@ public class Pneumatics extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    private final DoubleSolenoid solenoid1 = new DoubleSolenoid(RobotMap.solenoid1Extend, RobotMap.solenoid1Retract);
-    private final DoubleSolenoid solenoid2 = new DoubleSolenoid(RobotMap.solenoid2Extend, RobotMap.solenoid2Retract);
-    private final Compressor compressor = new Compressor(RobotMap.pressureSwitchChannel, RobotMap.compressorRelayChannel);
+    private final DoubleSolenoid solenoid1 = new DoubleSolenoid(RobotMap.solenoid1ExtendRelayChannel, RobotMap.solenoid1RetractRelayChannel);
+    private final DoubleSolenoid solenoid2 = new DoubleSolenoid(RobotMap.solenoid2ExtendRelayChannel, RobotMap.solenoid2RetractRelayChannel);
+    private final Compressor compressor = new Compressor(RobotMap.pressureSwitchDIOChannel, RobotMap.compressorRelayChannel);
 
     public Pneumatics() {
         compressor.start();
@@ -55,7 +55,7 @@ public class Pneumatics extends Subsystem {
         solenoid2.set(DoubleSolenoid.Value.kReverse);
     }
 
-    public void solenoidStop() {
+    public void solenoidsStop() {
         solenoid1.set(DoubleSolenoid.Value.kOff);
         solenoid2.set(DoubleSolenoid.Value.kOff);
     }
