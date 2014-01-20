@@ -23,6 +23,7 @@ public abstract class CommandBase extends Command {
         oi = new OI();
 
         SmartDashboard.putData(driveTrain);
+        SmartDashboard.putData(pneumatics);
     }
 
     public CommandBase(String name) {

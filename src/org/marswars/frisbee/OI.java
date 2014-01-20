@@ -16,7 +16,7 @@ public class OI {
     public OI() {
         xbox = new XboxController(RobotMap.xboxControllerUSBPort);
         new JoystickButton(xbox, XboxController.ButtonType.kA.value).whenPressed(new SolenoidsTest());
-        new JoystickButton(xbox, XboxController.ButtonType.kB.value).whileHeld(new CompressorStop());
+        new JoystickButton(xbox, XboxController.ButtonType.kB.value).whenPressed(new CompressorStop());
         new JoystickButton(xbox, XboxController.ButtonType.kRTrigger.value).whileHeld(new Brake());
     }
 }

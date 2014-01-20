@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.Timer;
  * @author GrayKS
  */
 public class SolenoidsTest extends CommandBase {
+    
+    private boolean m_isFinished = false;
 
     public SolenoidsTest() {
         requires(pneumatics);
@@ -36,15 +38,17 @@ public class SolenoidsTest extends CommandBase {
         pneumatics.solenoidsRetract();
         Timer.delay(1);
         pneumatics.solenoidsStop();
+        m_isFinished = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return m_isFinished;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+        m_isFinished = false;
     }
 
     // Called when another command which requires one or more of the same
